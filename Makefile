@@ -1,6 +1,14 @@
-addtest: addtest.c bigadd.o
-	gcc -o addtest addtest.c bigadd.o
-bigadd.o: bigadd.asm
-	nasm -f elf64 -o bigadd.o bigadd.asm
+addtest: src/addtest.c libbig.a
+	gcc -O2 -g -o addtest src/addtest.c libbig.a
+libbig.a: obj/bigarithmatic.o obj/bigcommon.o
+	ar rcs libbig.a obj/bigarithmatic.o obj/bigcommon.o
+obj/bigarithmatic.o: obj asm/bigadd.asm asm/bigsub.asm asm/bigarithmatic.asm
+	nasm -f elf64 -g -o obj/bigarithmatic.o asm/bigarithmatic.asm
+obj/bigcommon.o: obj asm/bigcommon.asm
+	nasm -f elf64 -g -o obj/bigcommon.o asm/bigcommon.asm
+obj:
+	mkdir -p obj
 clean:
-	rm -f addtest bigadd.o
+	rm -f addtest libbig.a
+	rm -f obj/*
+	rmdir obj
