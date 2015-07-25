@@ -17,6 +17,7 @@ int main()
 {
 	uint64_t dst, a = 5, b = 3;
 	int cmp;
+	char tmpstr[1024];
 	printf("=====mul/cmp test=======\n");
 	cmp = bigcmp(&a,&b,8);
 	printf("%lu <=> %lu : %d\n", a, b, cmp);
@@ -29,4 +30,5 @@ int main()
 	printf("=========sub test=======\n");
 	bigarithmatic(&sub64, &dst, &a, &b, 0);
 	printf("%lu - %lu = %lu\n", a, b, dst);
+	bigtostr(tmpstr, &dst, 8);
 }

@@ -12,4 +12,18 @@
 [BITS 64]
 global bigarithmatic		;C wrapper for arithmatic functions
 global bigcmp			;System-V ABI compare function
+global bigtostr			;System-V ABI c-string conversion
 global _arithinit		;arithmatic init flag
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;enable these for debugging;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+global stk_setup
+global stk_destroy
+global bigtostr_op
+global bmemcp
+global bmemzr
+global bhxadd
+global bhxdv
+global bstrcmp
+global bstrcpy
+global bstrwrk

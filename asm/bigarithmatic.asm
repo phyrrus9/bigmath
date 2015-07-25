@@ -9,6 +9,7 @@ _arithinit:RESB	1			;flag set to 1 after init
 					;MAKE SURE TO SET THIS FIRST!
 %include 'asm/bigadd.asm'
 %include 'asm/bigsub.asm'
+%include 'asm/bigtostr.asm'
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;Text section                                  ;
 ;Where all of the library code lives           ;

@@ -1,4 +1,5 @@
 /* big arithmatic functions */
+void bigtostr(char *dst, void *src, unsigned int size);
 /* DO NOT CALL ANY OF THESE! */
 void add64(void);
 void add128(void);
